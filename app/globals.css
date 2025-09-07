@@ -40,3 +40,19 @@ a {
     color-scheme: dark;
   }
 }
+
+a {
+  text-decoration: underline;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+}
+
+a:hover {
+  transform: rotate(4deg);
+}
+
+ul {
+  padding-left: 1.2em; /* or 1em, adjust as needed */
+  margin-left: 0;
+}

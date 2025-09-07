@@ -1,97 +1,116 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { env } from "@/env/env";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <h1>{env.DATABASE_URL}</h1>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
+        <h1>Welcome to the Fullstack App Template!</h1>
+        <p>
+          You are using a modern template for fullstack web app development,
+          featuring:
+        </p>
+        <ul>
           <li>
-            Get started by editing <code>app/page.tsx</code>.
+            <a
+              href="https://nextjs.org/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Next.js (App Router)
+            </a>{" "}
+            for React-based SSR and SSG
           </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
+          <li>
+            <a
+              href="https://www.typescriptlang.org/docs/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              TypeScript
+            </a>{" "}
+            for type-safe code
+          </li>
+          <li>
+            <a
+              href="https://www.prisma.io/docs/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Prisma ORM
+            </a>{" "}
+            for PostgreSQL
+          </li>
+          <li>
+            <a
+              href="https://zod.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Zod
+            </a>{" "}
+            for environment variable validation
+          </li>
+          <li>
+            <a
+              href="https://vitest.dev/guide/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Vitest
+            </a>{" "}
+            for fast unit testing
+          </li>
+          <li>
+            <a
+              href="https://typicode.github.io/husky/#/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Husky
+            </a>
+            ,{" "}
+            <a
+              href="https://github.com/okonet/lint-staged"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              lint-staged
+            </a>
+            , and{" "}
+            <a
+              href="https://commitlint.js.org/#/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              commitlint
+            </a>{" "}
+            for code quality
+          </li>
+          <li>
+            <a
+              href="https://docs.docker.com/compose/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Docker Compose
+            </a>{" "}
+            for containerized development
+          </li>
+        </ul>
+        <p>
+          For a full overview, project structure, and setup instructions, check
+          out the public{" "}
           <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://github.com/TimDehler/fullstack-app-template"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            repository
           </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+          .
+        </p>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
