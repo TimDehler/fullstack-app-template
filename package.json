@@ -8,12 +8,12 @@
     "start": "cross-env NODE_ENV=production next start",
     "lint": "eslint",
     "prepare": "husky install",
-    "test": "vitest"
+    "test": "vitest",
+    "commit": "git add . && npx git-cz"
   },
   "lint-staged": {
     "*.{js,ts,tsx,json,css,scss,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "dependencies": {
@@ -32,8 +32,10 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "commitizen": "^4.3.1",
     "concurrently": "^9.2.1",
     "cross-env": "^10.0.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
     "husky": "^8.0.0",
@@ -42,5 +44,10 @@
     "ts-node": "^10.9.2",
     "typescript": "^5",
     "vitest": "^3.2.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
