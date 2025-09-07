@@ -1,0 +1,36 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: fullstack-app-template-postgres-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: testdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  nextjs:
+    image: node:20
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    environment:
+      DATABASE_URL: "postgresql://admin:admin@postgres:5432/testdb?schema=public"
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+volumes:
+  pgdata:
+
+networks:
+  app-network:
